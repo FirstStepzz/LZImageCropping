@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8439EAC11FF0D56600B476D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAC01FF0D56600B476D2 /* AppDelegate.m */; };
+		8439EAC41FF0D56600B476D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAC31FF0D56600B476D2 /* ViewController.m */; };
+		8439EAC71FF0D56600B476D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8439EAC51FF0D56600B476D2 /* Main.storyboard */; };
+		8439EAC91FF0D56600B476D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8439EAC81FF0D56600B476D2 /* Assets.xcassets */; };
+		8439EACC1FF0D56600B476D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8439EACA1FF0D56600B476D2 /* LaunchScreen.storyboard */; };
+		8439EACF1FF0D56600B476D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EACE1FF0D56600B476D2 /* main.m */; };
+		8439EAD91FF0D56600B476D2 /* CroppingImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAD81FF0D56600B476D2 /* CroppingImageTests.m */; };
+		8439EAE41FF0D56600B476D2 /* CroppingImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAE31FF0D56600B476D2 /* CroppingImageUITests.m */; };
+		8439EAF41FF0D65400B476D2 /* LZImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAF31FF0D65400B476D2 /* LZImageBrowser.m */; };
+		84747CD02003460400B14F55 /* IMG_1121.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84747CCF2003460400B14F55 /* IMG_1121.jpg */; };
+		84747CD22003467300B14F55 /* IMG_3208.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84747CD12003467300B14F55 /* IMG_3208.jpg */; };
+		84959F301FFCF9F80079AE5B /* LZImageCropping.m in Sources */ = {isa = PBXBuildFile; fileRef = 84959F2E1FFCF9F80079AE5B /* LZImageCropping.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8439EAD51FF0D56600B476D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8439EAB41FF0D56600B476D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8439EABB1FF0D56600B476D2;
+			remoteInfo = CroppingImage;
+		};
+		8439EAE01FF0D56600B476D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8439EAB41FF0D56600B476D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8439EABB1FF0D56600B476D2;
+			remoteInfo = CroppingImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8439EABC1FF0D56600B476D2 /* CroppingImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroppingImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8439EABF1FF0D56600B476D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8439EAC01FF0D56600B476D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8439EAC21FF0D56600B476D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8439EAC31FF0D56600B476D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8439EAC61FF0D56600B476D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8439EAC81FF0D56600B476D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8439EACB1FF0D56600B476D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8439EACD1FF0D56600B476D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8439EACE1FF0D56600B476D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8439EAD41FF0D56600B476D2 /* CroppingImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CroppingImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8439EAD81FF0D56600B476D2 /* CroppingImageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CroppingImageTests.m; sourceTree = "<group>"; };
+		8439EADA1FF0D56600B476D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8439EADF1FF0D56600B476D2 /* CroppingImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CroppingImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8439EAE31FF0D56600B476D2 /* CroppingImageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CroppingImageUITests.m; sourceTree = "<group>"; };
+		8439EAE51FF0D56600B476D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8439EAF21FF0D65400B476D2 /* LZImageBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZImageBrowser.h; sourceTree = "<group>"; };
+		8439EAF31FF0D65400B476D2 /* LZImageBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowser.m; sourceTree = "<group>"; };
+		84747CCF2003460400B14F55 /* IMG_1121.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1121.jpg; sourceTree = "<group>"; };
+		84747CD12003467300B14F55 /* IMG_3208.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3208.jpg; sourceTree = "<group>"; };
+		84959F2E1FFCF9F80079AE5B /* LZImageCropping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageCropping.m; sourceTree = "<group>"; };
+		84959F2F1FFCF9F80079AE5B /* LZImageCropping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageCropping.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8439EAB91FF0D56600B476D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8439EAD11FF0D56600B476D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8439EADC1FF0D56600B476D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8439EAB31FF0D56600B476D2 = {
+			isa = PBXGroup;
+			children = (
+				8439EABE1FF0D56600B476D2 /* CroppingImage */,
+				8439EAD71FF0D56600B476D2 /* CroppingImageTests */,
+				8439EAE21FF0D56600B476D2 /* CroppingImageUITests */,
+				8439EABD1FF0D56600B476D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8439EABD1FF0D56600B476D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8439EABC1FF0D56600B476D2 /* CroppingImage.app */,
+				8439EAD41FF0D56600B476D2 /* CroppingImageTests.xctest */,
+				8439EADF1FF0D56600B476D2 /* CroppingImageUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8439EABE1FF0D56600B476D2 /* CroppingImage */ = {
+			isa = PBXGroup;
+			children = (
+				8439EAF11FF0D59800B476D2 /* CroppingImage */,
+				8439EABF1FF0D56600B476D2 /* AppDelegate.h */,
+				8439EAC01FF0D56600B476D2 /* AppDelegate.m */,
+				8439EAC21FF0D56600B476D2 /* ViewController.h */,
+				8439EAC31FF0D56600B476D2 /* ViewController.m */,
+				8439EAC51FF0D56600B476D2 /* Main.storyboard */,
+				8439EAC81FF0D56600B476D2 /* Assets.xcassets */,
+				8439EACA1FF0D56600B476D2 /* LaunchScreen.storyboard */,
+				8439EACD1FF0D56600B476D2 /* Info.plist */,
+				8439EACE1FF0D56600B476D2 /* main.m */,
+			);
+			path = CroppingImage;
+			sourceTree = "<group>";
+		};
+		8439EAD71FF0D56600B476D2 /* CroppingImageTests */ = {
+			isa = PBXGroup;
+			children = (
+				8439EAD81FF0D56600B476D2 /* CroppingImageTests.m */,
+				8439EADA1FF0D56600B476D2 /* Info.plist */,
+			);
+			path = CroppingImageTests;
+			sourceTree = "<group>";
+		};
+		8439EAE21FF0D56600B476D2 /* CroppingImageUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8439EAE31FF0D56600B476D2 /* CroppingImageUITests.m */,
+				8439EAE51FF0D56600B476D2 /* Info.plist */,
+			);
+			path = CroppingImageUITests;
+			sourceTree = "<group>";
+		};
+		8439EAF11FF0D59800B476D2 /* CroppingImage */ = {
+			isa = PBXGroup;
+			children = (
+				84747CCF2003460400B14F55 /* IMG_1121.jpg */,
+				84747CD12003467300B14F55 /* IMG_3208.jpg */,
+				8439EAF21FF0D65400B476D2 /* LZImageBrowser.h */,
+				8439EAF31FF0D65400B476D2 /* LZImageBrowser.m */,
+				84959F2F1FFCF9F80079AE5B /* LZImageCropping.h */,
+				84959F2E1FFCF9F80079AE5B /* LZImageCropping.m */,
+			);
+			path = CroppingImage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8439EABB1FF0D56600B476D2 /* CroppingImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8439EAE81FF0D56600B476D2 /* Build configuration list for PBXNativeTarget "CroppingImage" */;
+			buildPhases = (
+				8439EAB81FF0D56600B476D2 /* Sources */,
+				8439EAB91FF0D56600B476D2 /* Frameworks */,
+				8439EABA1FF0D56600B476D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CroppingImage;
+			productName = CroppingImage;
+			productReference = 8439EABC1FF0D56600B476D2 /* CroppingImage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8439EAD31FF0D56600B476D2 /* CroppingImageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8439EAEB1FF0D56600B476D2 /* Build configuration list for PBXNativeTarget "CroppingImageTests" */;
+			buildPhases = (
+				8439EAD01FF0D56600B476D2 /* Sources */,
+				8439EAD11FF0D56600B476D2 /* Frameworks */,
+				8439EAD21FF0D56600B476D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8439EAD61FF0D56600B476D2 /* PBXTargetDependency */,
+			);
+			name = CroppingImageTests;
+			productName = CroppingImageTests;
+			productReference = 8439EAD41FF0D56600B476D2 /* CroppingImageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8439EADE1FF0D56600B476D2 /* CroppingImageUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8439EAEE1FF0D56600B476D2 /* Build configuration list for PBXNativeTarget "CroppingImageUITests" */;
+			buildPhases = (
+				8439EADB1FF0D56600B476D2 /* Sources */,
+				8439EADC1FF0D56600B476D2 /* Frameworks */,
+				8439EADD1FF0D56600B476D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8439EAE11FF0D56600B476D2 /* PBXTargetDependency */,
+			);
+			name = CroppingImageUITests;
+			productName = CroppingImageUITests;
+			productReference = 8439EADF1FF0D56600B476D2 /* CroppingImageUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8439EAB41FF0D56600B476D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "刘志雄";
+				TargetAttributes = {
+					8439EABB1FF0D56600B476D2 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					8439EAD31FF0D56600B476D2 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8439EABB1FF0D56600B476D2;
+					};
+					8439EADE1FF0D56600B476D2 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8439EABB1FF0D56600B476D2;
+					};
+				};
+			};
+			buildConfigurationList = 8439EAB71FF0D56600B476D2 /* Build configuration list for PBXProject "CroppingImage" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8439EAB31FF0D56600B476D2;
+			productRefGroup = 8439EABD1FF0D56600B476D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8439EABB1FF0D56600B476D2 /* CroppingImage */,
+				8439EAD31FF0D56600B476D2 /* CroppingImageTests */,
+				8439EADE1FF0D56600B476D2 /* CroppingImageUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8439EABA1FF0D56600B476D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84747CD22003467300B14F55 /* IMG_3208.jpg in Resources */,
+				84747CD02003460400B14F55 /* IMG_1121.jpg in Resources */,
+				8439EACC1FF0D56600B476D2 /* LaunchScreen.storyboard in Resources */,
+				8439EAC91FF0D56600B476D2 /* Assets.xcassets in Resources */,
+				8439EAC71FF0D56600B476D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8439EAD21FF0D56600B476D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8439EADD1FF0D56600B476D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8439EAB81FF0D56600B476D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84959F301FFCF9F80079AE5B /* LZImageCropping.m in Sources */,
+				8439EAF41FF0D65400B476D2 /* LZImageBrowser.m in Sources */,
+				8439EAC41FF0D56600B476D2 /* ViewController.m in Sources */,
+				8439EACF1FF0D56600B476D2 /* main.m in Sources */,
+				8439EAC11FF0D56600B476D2 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8439EAD01FF0D56600B476D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8439EAD91FF0D56600B476D2 /* CroppingImageTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8439EADB1FF0D56600B476D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8439EAE41FF0D56600B476D2 /* CroppingImageUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8439EAD61FF0D56600B476D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8439EABB1FF0D56600B476D2 /* CroppingImage */;
+			targetProxy = 8439EAD51FF0D56600B476D2 /* PBXContainerItemProxy */;
+		};
+		8439EAE11FF0D56600B476D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8439EABB1FF0D56600B476D2 /* CroppingImage */;
+			targetProxy = 8439EAE01FF0D56600B476D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8439EAC51FF0D56600B476D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8439EAC61FF0D56600B476D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8439EACA1FF0D56600B476D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8439EACB1FF0D56600B476D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8439EAE61FF0D56600B476D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8439EAE71FF0D56600B476D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8439EAE91FF0D56600B476D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XJKR9VR5GV;
+				INFOPLIST_FILE = CroppingImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Peter-Liu.CroppingImage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8439EAEA1FF0D56600B476D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XJKR9VR5GV;
+				INFOPLIST_FILE = CroppingImage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Peter-Liu.CroppingImage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8439EAEC1FF0D56600B476D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CroppingImageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Peter-Liu.CroppingImageTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CroppingImage.app/CroppingImage";
+			};
+			name = Debug;
+		};
+		8439EAED1FF0D56600B476D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CroppingImageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Peter-Liu.CroppingImageTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CroppingImage.app/CroppingImage";
+			};
+			name = Release;
+		};
+		8439EAEF1FF0D56600B476D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CroppingImageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Peter-Liu.CroppingImageUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CroppingImage;
+			};
+			name = Debug;
+		};
+		8439EAF01FF0D56600B476D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CroppingImageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Peter-Liu.CroppingImageUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CroppingImage;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8439EAB71FF0D56600B476D2 /* Build configuration list for PBXProject "CroppingImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8439EAE61FF0D56600B476D2 /* Debug */,
+				8439EAE71FF0D56600B476D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8439EAE81FF0D56600B476D2 /* Build configuration list for PBXNativeTarget "CroppingImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8439EAE91FF0D56600B476D2 /* Debug */,
+				8439EAEA1FF0D56600B476D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8439EAEB1FF0D56600B476D2 /* Build configuration list for PBXNativeTarget "CroppingImageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8439EAEC1FF0D56600B476D2 /* Debug */,
+				8439EAED1FF0D56600B476D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8439EAEE1FF0D56600B476D2 /* Build configuration list for PBXNativeTarget "CroppingImageUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8439EAEF1FF0D56600B476D2 /* Debug */,
+				8439EAF01FF0D56600B476D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8439EAB41FF0D56600B476D2 /* Project object */;
+}
