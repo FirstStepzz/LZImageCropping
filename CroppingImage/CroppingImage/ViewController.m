@@ -33,7 +33,7 @@
 
 -(void)buttonClick:(UIButton *)sender{
     LZImageCropping *imageBrowser = [[LZImageCropping alloc]init];
-    //设置代理
+    //设置代理 哈哈
     imageBrowser.delegate = self;
     //设置自定义裁剪区域大小
     imageBrowser.cropSize = CGSizeMake(self.view.frame.size.width - 60, (self.view.frame.size.width-60));
