@@ -41,7 +41,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_1121"  ofType:@"jpg"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     [imageBrowser setImage:image];
-    //是否需要圆形- - - - - -
+    //是否需要圆形- - - - - -  test2
     imageBrowser.isRound = YES;
     [self presentViewController:imageBrowser animated:YES completion:nil];
 }
