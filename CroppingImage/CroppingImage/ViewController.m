@@ -33,11 +33,15 @@
 
 -(void)buttonClick:(UIButton *)sender{
     LZImageCropping *imageBrowser = [[LZImageCropping alloc]init];
+    //设置代理
     imageBrowser.delegate = self;
+    //设置自定义裁剪区域大小
     imageBrowser.cropSize = CGSizeMake(self.view.frame.size.width - 60, (self.view.frame.size.width-60));
+    //设置图片
     NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_1121"  ofType:@"jpg"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     [imageBrowser setImage:image];
+    //是否需要圆形- - - - - -
     imageBrowser.isRound = YES;
     [self presentViewController:imageBrowser animated:YES completion:nil];
 }
