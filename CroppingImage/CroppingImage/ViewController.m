@@ -37,7 +37,7 @@
     imageBrowser.delegate = self;
     //设置自定义裁剪区域大小
     imageBrowser.cropSize = CGSizeMake(self.view.frame.size.width - 60, (self.view.frame.size.width-60));
-    //设置图片
+    //设置图片  - test1
     NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_1121"  ofType:@"jpg"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     [imageBrowser setImage:image];
