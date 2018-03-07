@@ -19,6 +19,10 @@
     [super viewDidLoad];
     //1
     //2
+    //3
+    //4
+    
+    //7
     [self.view setBackgroundColor:[UIColor whiteColor]];
     UIButton *button = [[UIButton alloc]init];
     [button setBounds:CGRectMake(0, 0, 50, 20)];
