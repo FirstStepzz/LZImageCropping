@@ -32,7 +32,7 @@
 -(BOOL)prefersStatusBarHidden{
     return YES;
 }
-
+//1
 - (void)viewDidLoad {
     [super viewDidLoad];
     
