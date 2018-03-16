@@ -28,6 +28,7 @@
 @end
 #define IOS11 [[UIDevice currentDevice].systemVersion floatValue] >= 11.0
 @implementation LZImageCropping
+//3
 //2
 -(BOOL)prefersStatusBarHidden{
     return YES;
