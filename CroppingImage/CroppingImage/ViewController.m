@@ -25,7 +25,6 @@
     //7
     //5
     //6
->>>>>>> test1
     [self.view setBackgroundColor:[UIColor whiteColor]];
     UIButton *button = [[UIButton alloc]init];
     [button setBounds:CGRectMake(0, 0, 50, 20)];
