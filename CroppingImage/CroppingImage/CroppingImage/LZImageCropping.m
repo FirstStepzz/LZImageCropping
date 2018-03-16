@@ -30,6 +30,7 @@
 @implementation LZImageCropping
 //3
 //2
+//--
 -(BOOL)prefersStatusBarHidden{
     return YES;
 }
