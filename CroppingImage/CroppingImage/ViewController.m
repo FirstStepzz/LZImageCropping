@@ -49,7 +49,7 @@
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     [imageBrowser setImage:image];
     //是否需要圆形
-    imageBrowser.isRound = YES;
+    imageBrowser.isRound = NO;
     [self presentViewController:imageBrowser animated:YES completion:nil];
 }
 
