@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-@class LZImageCropping;
+@class LZImageCropper;
 @protocol LZImageCroppingDelegate <NSObject>
 
--(void)lzImageCroppingDidCancle:(LZImageCropping *)cropping;
--(void)lzImageCropping:(LZImageCropping *)cropping didCropImage:(UIImage *)image;
+-(void)lzImageCroppingDidCancle:(LZImageCropper *)cropping;
+-(void)lzImageCropping:(LZImageCropper *)cropping didCropImage:(UIImage *)image;
 
 @end
 
-@interface LZImageCropping : UIViewController
+@interface LZImageCropper : UIViewController
 
 @property(nonatomic,weak)id<LZImageCroppingDelegate>delegate;
 
@@ -29,7 +29,10 @@
  */
 @property(nonatomic,assign)CGSize cropSize;
 
-//是否裁剪成圆形
+
+/**
+ 是否裁剪成圆形
+ */
 @property(nonatomic,assign)BOOL isRound;
 
 @end

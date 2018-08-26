@@ -9,16 +9,12 @@
 /* Begin PBXBuildFile section */
 		8439EAC11FF0D56600B476D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAC01FF0D56600B476D2 /* AppDelegate.m */; };
 		8439EAC41FF0D56600B476D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAC31FF0D56600B476D2 /* ViewController.m */; };
-		8439EAC71FF0D56600B476D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8439EAC51FF0D56600B476D2 /* Main.storyboard */; };
-		8439EAC91FF0D56600B476D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8439EAC81FF0D56600B476D2 /* Assets.xcassets */; };
-		8439EACC1FF0D56600B476D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8439EACA1FF0D56600B476D2 /* LaunchScreen.storyboard */; };
 		8439EACF1FF0D56600B476D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EACE1FF0D56600B476D2 /* main.m */; };
 		8439EAD91FF0D56600B476D2 /* CroppingImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAD81FF0D56600B476D2 /* CroppingImageTests.m */; };
 		8439EAE41FF0D56600B476D2 /* CroppingImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAE31FF0D56600B476D2 /* CroppingImageUITests.m */; };
-		8439EAF41FF0D65400B476D2 /* LZImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAF31FF0D65400B476D2 /* LZImageBrowser.m */; };
 		84747CD02003460400B14F55 /* IMG_1121.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84747CCF2003460400B14F55 /* IMG_1121.jpg */; };
 		84747CD22003467300B14F55 /* IMG_3208.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84747CD12003467300B14F55 /* IMG_3208.jpg */; };
-		84959F301FFCF9F80079AE5B /* LZImageCropping.m in Sources */ = {isa = PBXBuildFile; fileRef = 84959F2E1FFCF9F80079AE5B /* LZImageCropping.m */; };
+		84959F301FFCF9F80079AE5B /* LZImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84959F2E1FFCF9F80079AE5B /* LZImageCropper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +40,6 @@
 		8439EAC01FF0D56600B476D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8439EAC21FF0D56600B476D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8439EAC31FF0D56600B476D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8439EAC61FF0D56600B476D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8439EAC81FF0D56600B476D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8439EACB1FF0D56600B476D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8439EACD1FF0D56600B476D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8439EACE1FF0D56600B476D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8439EAD41FF0D56600B476D2 /* CroppingImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CroppingImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,12 +48,10 @@
 		8439EADF1FF0D56600B476D2 /* CroppingImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CroppingImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8439EAE31FF0D56600B476D2 /* CroppingImageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CroppingImageUITests.m; sourceTree = "<group>"; };
 		8439EAE51FF0D56600B476D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8439EAF21FF0D65400B476D2 /* LZImageBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZImageBrowser.h; sourceTree = "<group>"; };
-		8439EAF31FF0D65400B476D2 /* LZImageBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowser.m; sourceTree = "<group>"; };
 		84747CCF2003460400B14F55 /* IMG_1121.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1121.jpg; sourceTree = "<group>"; };
 		84747CD12003467300B14F55 /* IMG_3208.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3208.jpg; sourceTree = "<group>"; };
-		84959F2E1FFCF9F80079AE5B /* LZImageCropping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageCropping.m; sourceTree = "<group>"; };
-		84959F2F1FFCF9F80079AE5B /* LZImageCropping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageCropping.h; sourceTree = "<group>"; };
+		84959F2E1FFCF9F80079AE5B /* LZImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageCropper.m; sourceTree = "<group>"; };
+		84959F2F1FFCF9F80079AE5B /* LZImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageCropper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +107,6 @@
 				8439EAC01FF0D56600B476D2 /* AppDelegate.m */,
 				8439EAC21FF0D56600B476D2 /* ViewController.h */,
 				8439EAC31FF0D56600B476D2 /* ViewController.m */,
-				8439EAC51FF0D56600B476D2 /* Main.storyboard */,
-				8439EAC81FF0D56600B476D2 /* Assets.xcassets */,
-				8439EACA1FF0D56600B476D2 /* LaunchScreen.storyboard */,
 				8439EACD1FF0D56600B476D2 /* Info.plist */,
 				8439EACE1FF0D56600B476D2 /* main.m */,
 			);
@@ -148,10 +136,8 @@
 			children = (
 				84747CCF2003460400B14F55 /* IMG_1121.jpg */,
 				84747CD12003467300B14F55 /* IMG_3208.jpg */,
-				8439EAF21FF0D65400B476D2 /* LZImageBrowser.h */,
-				8439EAF31FF0D65400B476D2 /* LZImageBrowser.m */,
-				84959F2F1FFCF9F80079AE5B /* LZImageCropping.h */,
-				84959F2E1FFCF9F80079AE5B /* LZImageCropping.m */,
+				84959F2F1FFCF9F80079AE5B /* LZImageCropper.h */,
+				84959F2E1FFCF9F80079AE5B /* LZImageCropper.m */,
 			);
 			path = CroppingImage;
 			sourceTree = "<group>";
@@ -264,9 +250,6 @@
 			files = (
 				84747CD22003467300B14F55 /* IMG_3208.jpg in Resources */,
 				84747CD02003460400B14F55 /* IMG_1121.jpg in Resources */,
-				8439EACC1FF0D56600B476D2 /* LaunchScreen.storyboard in Resources */,
-				8439EAC91FF0D56600B476D2 /* Assets.xcassets in Resources */,
-				8439EAC71FF0D56600B476D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84959F301FFCF9F80079AE5B /* LZImageCropping.m in Sources */,
-				8439EAF41FF0D65400B476D2 /* LZImageBrowser.m in Sources */,
+				84959F301FFCF9F80079AE5B /* LZImageCropper.m in Sources */,
 				8439EAC41FF0D56600B476D2 /* ViewController.m in Sources */,
 				8439EACF1FF0D56600B476D2 /* main.m in Sources */,
 				8439EAC11FF0D56600B476D2 /* AppDelegate.m in Sources */,
@@ -329,25 +311,6 @@
 			targetProxy = 8439EAE01FF0D56600B476D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8439EAC51FF0D56600B476D2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8439EAC61FF0D56600B476D2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8439EACA1FF0D56600B476D2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8439EACB1FF0D56600B476D2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8439EAE61FF0D56600B476D2 /* Debug */ = {
@@ -457,9 +420,8 @@
 		8439EAE91FF0D56600B476D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 542CW39AT8;
+				DEVELOPMENT_TEAM = ZB978L2WLM;
 				INFOPLIST_FILE = CroppingImage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -472,9 +434,8 @@
 		8439EAEA1FF0D56600B476D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 542CW39AT8;
+				DEVELOPMENT_TEAM = ZB978L2WLM;
 				INFOPLIST_FILE = CroppingImage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

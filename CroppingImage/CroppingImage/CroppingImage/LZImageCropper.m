@@ -6,13 +6,10 @@
 //  Copyright © 2017年 刘志雄. All rights reserved.
 //
 
-#import "LZImageCropping.h"
-#import "sys/utsname.h"
-@interface LZImageCropping ()<UIScrollViewDelegate>
-{
+#import "LZImageCropper.h"
+@interface LZImageCropper ()<UIScrollViewDelegate>{
     CGFloat _selfHeight;
     CGFloat _selfWidth;
-    
     CGRect _cropFrame;
 }
 
@@ -26,45 +23,51 @@
 @property(nonatomic,strong)UIView *overLayView;
 
 @end
+
 #define IOS11 [[UIDevice currentDevice].systemVersion floatValue] >= 11.0
-@implementation LZImageCropping
-//000
-//3
-//2
-//--
+
+
+@implementation LZImageCropper
+
 -(BOOL)prefersStatusBarHidden{
     return YES;
 }
-//1
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.view setBackgroundColor:[UIColor blackColor]];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self setDefaultData];
+    _selfWidth = self.view.frame.size.width;
+    _selfHeight = self.view.frame.size.height;
+    
     [self createUI];
+    [self setupData];
+    
+    //绘制裁剪框
+    if (self.isRound) {
+        [self transparentCutRoundArea];
+    }else{
+        [self transparentCutSquareArea];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    //自动缩放填满裁剪区域
     CGFloat scale;
-    if (_cropSize.width/_cropSize.height > _image.size.width/_image.size.height) {
+    CGFloat cropWHRatio = _cropSize.width/_cropSize.height;
+    CGFloat  imageWHRatio = _image.size.width/_image.size.height;
+    if (cropWHRatio > imageWHRatio) {
         scale = _cropSize.width/_imageView.frame.size.width;
-        [self.scrollView setZoomScale:scale];
-        [self.scrollView setZoomScale:scale animated:YES];
     }else{
         scale = _cropSize.height/_imageView.frame.size.height;
-        [self.scrollView setZoomScale:scale animated:YES];
     }
-    self.scrollView.userInteractionEnabled = YES;
+    //自动缩放填满裁剪区域
+    [self.scrollView setZoomScale:scale animated:YES];
+    //设置刚好填充满裁剪区域的缩放比例，为最小缩放比例
     [self.scrollView setMinimumZoomScale:scale];
-}
-
--(void)setDefaultData{
-    _selfWidth = self.view.frame.size.width;
-    _selfHeight = self.view.frame.size.height;
+    self.scrollView.userInteractionEnabled = YES;
 }
 
 -(void)createUI{
@@ -77,12 +80,33 @@
     [self.view addSubview:self.sureButton];
 }
 
+-(void)setupData{
+    //设置裁剪框区域
+    _cropFrame = CGRectMake((self.view.frame.size.width-self.cropSize.width)/2,(self.view.frame.size.height-self.cropSize.height)/2,self.cropSize.width,self.cropSize.height);
+    
+    //设置图片
+    [_imageView setImage:self.image];
+    
+    //此处是根据裁剪区域和图片大小，让图片的imageView正好卡在裁剪区域内。等viewDidAppear的时候再进行缩放填充满裁剪区域
+    CGFloat cropWHRatio = _cropSize.width/_cropSize.height;
+    CGFloat  imageWHRatio = _image.size.width/_image.size.height;
+    CGFloat imageViewW,imageViewH,imageViewX,imageViewY;
+    if (cropWHRatio> imageWHRatio) {
+        imageViewW =  imageWHRatio*_cropSize.height;
+        imageViewH = _cropSize.height;
+        imageViewX = (_cropSize.width - imageViewW)/2 + (self.view.frame.size.width-_cropSize.width)/2;
+        imageViewY = 0;
+    }else{
+        imageViewX = (self.view.frame.size.width-_cropSize.width)/2;
+        imageViewW = _cropSize.width;
+        imageViewH = _cropSize.height / imageWHRatio;
+        imageViewY = (_cropSize.height - imageViewH)/2 + (self.view.frame.size.height-_cropSize.height)/2;
+    }
+    [_imageView setFrame:CGRectMake(imageViewX, imageViewY,imageViewW,imageViewH)];
+}
+
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    
-    if (!_image) {
-        return;
-    }
     
     if ([self lz_isIPhoneX]) {
         [self.titleLabel setFrame:CGRectMake(0, 40, _selfWidth, 20)];
@@ -98,20 +122,6 @@
     [self.overLayView setFrame:self.view.frame];
     [self.scrollView setFrame:CGRectMake(0, 0, _selfWidth, _selfHeight)];
     [self.scrollView setContentSize:CGSizeMake(_selfWidth, _selfHeight)];
-    
-    //初始位置
-    if (_cropSize.width/_cropSize.height > _image.size.width/_image.size.height) {
-        [_imageView setFrame:CGRectMake((_cropSize.width - _cropSize.height*_image.size.width/_image.size.height)/2 + (self.view.frame.size.width-_cropSize.width)/2,(_selfHeight-_cropSize.height)/2, _image.size.width/_image.size.height*_cropSize.height, _cropSize.height)];
-    }else{
-        [_imageView setFrame:CGRectMake((_selfWidth - _cropSize.width)/2, (_cropSize.height-_cropSize.width*_image.size.height/_image.size.width)/2+(_selfHeight-_cropSize.height)/2, _cropSize.width, _cropSize.width*_image.size.height/_image.size.width)];
-    }
-    
-    //绘制裁剪框
-    if (self.isRound) {
-        [self transparentCutRoundArea];
-    }else{
-        [self transparentCutSquareArea];
-    }
 }
 
 #pragma mark -
@@ -179,32 +189,27 @@
     rightTopPoint = CGPointMake(rightTopPoint.x * scrollScale, rightTopPoint.y*scrollScale);
     leftBottomPoint = CGPointMake(leftBottomPoint.x * scrollScale, leftBottomPoint.y*scrollScale);
     
-    //计算图片的宽高
+    //计算裁剪区域在原始图片上的位置
     CGFloat width = (rightTopPoint.x - leftTopPoint.x )* scaleRatio;
     CGFloat height = (leftBottomPoint.y - leftTopPoint.y) *scaleRatio;
-    
-    //计算裁剪区域在原始图片上的位置
     CGRect myImageRect = CGRectMake(leftTopPoint.x * scaleRatio, leftTopPoint.y*scaleRatio, width, height);
     
     //裁剪图片
     CGImageRef imageRef = self.image.CGImage;
     CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, myImageRect);
-    CGSize size;
-    size.width = myImageRect.size.width;
-    size.height = myImageRect.size.height;
-    UIGraphicsBeginImageContext(size);
+    UIGraphicsBeginImageContextWithOptions(myImageRect.size, YES, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextDrawImage(context, myImageRect, subImageRef);
-    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+    CGContextDrawImage(context, CGRectMake(0, 0, myImageRect.size.width, myImageRect.size.height), subImageRef);
+    UIImage *subImage = [UIImage imageWithCGImage:subImageRef];
     CGImageRelease(subImageRef);
     UIGraphicsEndImageContext();
     
     //是否需要圆形图片
     if (self.isRound) {
         //将图片裁剪成圆形
-        smallImage = [self clipCircularImage:smallImage];
+        subImage = [self clipCircularImage:subImage];
     }
-    return smallImage;
+    return subImage;
 }
 
 //将图片裁剪成圆形
@@ -217,12 +222,9 @@
     CGContextBeginPath(context);
     CGContextAddArc(context, arcCenterX, arcCenterY, image.size.width/2, 0.0, 2*M_PI, NO);
     CGContextClip(context);
-    CGRect myRect = CGRectMake(0 , 0, image.size.width ,  image.size.height);
-    [image drawInRect:myRect];
-    
+    [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return  newImage;
 }
 
@@ -239,16 +241,11 @@
     CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height)?
     (scrollView.bounds.size.height - scrollView.contentSize.height) *0.5 : 0.0;
     _imageView.center =CGPointMake(scrollView.contentSize.width *0.5 + offsetX,scrollView.contentSize.height *0.5 + offsetY);
-    
+
     //设置scrollView的contentSize，最小为self.view.frame
-    if (scrollView.contentSize.width >= _selfWidth  && scrollView.contentSize.height <= _selfHeight) {
-        scrollView.contentSize = CGSizeMake(scrollView.contentSize.width, _selfHeight);
-    }else if(scrollView.contentSize.width <= _selfWidth && scrollView.contentSize.height <= _selfHeight){
-        scrollView.contentSize = CGSizeMake(_selfWidth, _selfHeight);
-    }else if(scrollView.contentSize.width <= _selfWidth && scrollView.contentSize.height >= _selfHeight){
-        scrollView.contentSize = CGSizeMake(_selfWidth, scrollView.contentSize.height);
-    }else{
-    }
+    CGFloat scrollW = scrollView.contentSize.width >= _selfWidth?scrollView.contentSize.width:_selfWidth;
+    CGFloat scrollH = scrollView.contentSize.height >= _selfHeight?scrollView.contentSize.height:_selfHeight;
+    [scrollView setContentSize:CGSizeMake(scrollW, scrollH)];
     
     //设置scrollView的contentInset
     CGFloat imageWidth = _imageView.frame.size.width;
@@ -256,7 +253,7 @@
     CGFloat cropWidth = _cropSize.width;
     CGFloat cropHeight = _cropSize.height;
     
-    CGFloat leftRightInset = 0.0,topBottomInset = 0.0;
+    CGFloat leftRightInset = 0.f,topBottomInset = 0.f;
     
     //imageview的大小和裁剪框大小的三种情况，保证imageview最多能滑动到裁剪框的边缘
     if (imageWidth<= cropWidth) {
@@ -292,30 +289,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - Public
--(void)setCropSize:(CGSize)cropSize{
-    _cropSize = cropSize;
-    
-    //设置裁剪框区域
-    _cropFrame = CGRectMake((self.view.frame.size.width-cropSize.width)/2,(self.view.frame.size.height-cropSize.height)/2,cropSize.width, cropSize.height);
-    
-    [self.view setNeedsLayout];
-}
-
--(void)setImage:(UIImage *)image{
-    [_imageView setImage:image];
-    _image = image;
-    [self.view setNeedsLayout];
-    
-    //初始化ImageView的Frame
-    if (_cropSize.width/_cropSize.height > _image.size.width/_image.size.height) {
-        [_imageView setFrame:CGRectMake((_cropSize.width - _cropSize.height*_image.size.width/_image.size.height)/2 + (self.view.frame.size.width-_cropSize.width)/2,0, _image.size.width/_image.size.height*_cropSize.height, _cropSize.height)];
-    }else{
-        [_imageView setFrame:CGRectMake(0, (_cropSize.height-_cropSize.width*_image.size.height/_image.size.width)/2+(_selfHeight-_cropSize.height)/2, _cropSize.width, _cropSize.width*_image.size.height/_image.size.width)];
-    }
-}
-
-#pragma mark - private
+#pragma mark - lazyLoad
 -(UIScrollView *)scrollView{
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc]init];
@@ -401,14 +375,7 @@
 }
 
 - (BOOL)lz_isIPhoneX {
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding];
-    if ([platform isEqualToString:@"i386"] || [platform isEqualToString:@"x86_64"]) {
-        return [UIScreen mainScreen].bounds.size.height == 812;
-    }
-    BOOL isIPhoneX = [platform isEqualToString:@"iPhone10,3"] || [platform isEqualToString:@"iPhone10,6"];
-    return isIPhoneX;
+    return [UIScreen mainScreen].bounds.size.width == 812;
 }
 
 @end
