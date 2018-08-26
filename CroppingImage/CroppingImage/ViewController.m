@@ -11,6 +11,7 @@
 
 @interface ViewController ()<LZImageCroppingDelegate>
 @property(nonatomic,strong)UIImageView *imageView;
+@property(nonatomic,strong)    LZImageCropper * cropper;
 @end
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
@@ -22,7 +23,8 @@ static const CGFloat kBaseTag = 200;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.cropper= [[LZImageCropper alloc]init];
+
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     [self setupUI];
@@ -50,17 +52,17 @@ static const CGFloat kBaseTag = 200;
 }
 
 -(void)buttonClick:(UIButton *)sender{
-    LZImageCropper * cropper= [[LZImageCropper alloc]init];
+    self.cropper= [[LZImageCropper alloc]init];
     //设置代理
-    cropper.delegate = self;
+    self.cropper.delegate = self;
     //设置图片
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_1121"  ofType:@"jpg"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_3208"  ofType:@"jpg"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
-    [cropper setImage:image];
+    self.cropper.image = image;
     //设置自定义裁剪区域大小
-    cropper.cropSize = CGSizeMake(self.view.frame.size.width - 60, (self.view.frame.size.width-60));
-    cropper.isRound = sender.tag-kBaseTag == 0;
-    [self presentViewController:cropper animated:YES completion:nil];
+    self.cropper.cropSize = CGSizeMake(self.view.frame.size.width - 60, (self.view.frame.size.width-60));
+    self.cropper.isRound = sender.tag-kBaseTag == 0;
+    [self presentViewController:self.cropper animated:YES completion:nil];
 }
 
 #pragma mark - Delegate

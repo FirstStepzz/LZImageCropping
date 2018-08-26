@@ -73,11 +73,26 @@
 -(void)createUI{
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.imageView];
-    [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.overLayView];
+    [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.bottomLabel];
     [self.view addSubview:self.cancleButton];
     [self.view addSubview:self.sureButton];
+    
+    if ([self lz_isIPhoneX]) {
+        [self.titleLabel setFrame:CGRectMake(0, 40, _selfWidth, 20)];
+    }else{
+        [self.titleLabel setFrame:CGRectMake(0, 20, _selfWidth, 20)];
+    }
+    CGFloat height = [UIFont systemFontOfSize:15].pointSize;
+    CGFloat width = 40;
+    [self.bottomLabel setFrame:CGRectMake(0, _selfHeight-44,_selfWidth, 44)];
+    [self.cancleButton setFrame:CGRectMake(15, _selfHeight - 15 - height,width, height)];
+    [self.sureButton setFrame:CGRectMake(_selfWidth - 15- width, _selfHeight-15-height, width, height)];
+    
+    [self.overLayView setFrame:self.view.frame];
+    [self.scrollView setFrame:CGRectMake(0, 0, _selfWidth, _selfHeight)];
+    [self.scrollView setContentSize:CGSizeMake(_selfWidth, _selfHeight)];
 }
 
 -(void)setupData{
@@ -95,7 +110,7 @@
         imageViewW =  imageWHRatio*_cropSize.height;
         imageViewH = _cropSize.height;
         imageViewX = (_cropSize.width - imageViewW)/2 + (self.view.frame.size.width-_cropSize.width)/2;
-        imageViewY = 0;
+        imageViewY = (self.view.frame.size.height- _cropSize.height)/2;
     }else{
         imageViewX = (self.view.frame.size.width-_cropSize.width)/2;
         imageViewW = _cropSize.width;
@@ -103,25 +118,6 @@
         imageViewY = (_cropSize.height - imageViewH)/2 + (self.view.frame.size.height-_cropSize.height)/2;
     }
     [_imageView setFrame:CGRectMake(imageViewX, imageViewY,imageViewW,imageViewH)];
-}
-
--(void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    
-    if ([self lz_isIPhoneX]) {
-        [self.titleLabel setFrame:CGRectMake(0, 40, _selfWidth, 20)];
-    }else{
-        [self.titleLabel setFrame:CGRectMake(0, 20, _selfWidth, 20)];
-    }
-    CGFloat height = [UIFont systemFontOfSize:15].pointSize;
-    CGFloat width = 40;
-    [self.bottomLabel setFrame:CGRectMake(0, _selfHeight-44,_selfWidth, 44)];
-    [self.cancleButton setFrame:CGRectMake(15, _selfHeight - 15 - height,width, height)];
-    [self.sureButton setFrame:CGRectMake(_selfWidth - 15- width, _selfHeight-15-height, width, height)];
-    
-    [self.overLayView setFrame:self.view.frame];
-    [self.scrollView setFrame:CGRectMake(0, 0, _selfWidth, _selfHeight)];
-    [self.scrollView setContentSize:CGSizeMake(_selfWidth, _selfHeight)];
 }
 
 #pragma mark -
