@@ -56,7 +56,7 @@ static const CGFloat kBaseTag = 200;
     //设置代理
     self.cropper.delegate = self;
     //设置图片
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_3208"  ofType:@"jpg"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_3209"  ofType:@"jpg"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     self.cropper.image = image;
     //设置自定义裁剪区域大小

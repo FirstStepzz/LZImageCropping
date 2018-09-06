@@ -69,9 +69,9 @@
     
     //计算自动填充屏幕缩放比例
     if (viewWHRatio > imageWHRatio) {
-        autoScale = CGRectGetWidth(self.view.frame)/_imageView.frame.size.width;
+        autoScale = CGRectGetHeight(self.view.frame)/_imageView.frame.size.width;
     }else{
-        autoScale = CGRectGetHeight(self.view.frame)/_imageView.frame.size.height;
+        autoScale = CGRectGetWidth(self.view.frame)/_imageView.frame.size.height;
     }
     
     //自动缩放填满裁剪区域

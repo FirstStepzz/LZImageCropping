@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8426510F2140FEB400C0D4E4 /* IMG_3209.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8426510E2140FEB400C0D4E4 /* IMG_3209.jpg */; };
 		8439EAC11FF0D56600B476D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAC01FF0D56600B476D2 /* AppDelegate.m */; };
 		8439EAC41FF0D56600B476D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EAC31FF0D56600B476D2 /* ViewController.m */; };
 		8439EACF1FF0D56600B476D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439EACE1FF0D56600B476D2 /* main.m */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8426510E2140FEB400C0D4E4 /* IMG_3209.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3209.jpg; sourceTree = "<group>"; };
 		8439EABC1FF0D56600B476D2 /* CroppingImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroppingImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8439EABF1FF0D56600B476D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8439EAC01FF0D56600B476D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				84747CCF2003460400B14F55 /* IMG_1121.jpg */,
 				84747CD12003467300B14F55 /* IMG_3208.jpg */,
+				8426510E2140FEB400C0D4E4 /* IMG_3209.jpg */,
 				84959F2F1FFCF9F80079AE5B /* LZImageCropper.h */,
 				84959F2E1FFCF9F80079AE5B /* LZImageCropper.m */,
 			);
@@ -248,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8426510F2140FEB400C0D4E4 /* IMG_3209.jpg in Resources */,
 				84747CD22003467300B14F55 /* IMG_3208.jpg in Resources */,
 				84747CD02003460400B14F55 /* IMG_1121.jpg in Resources */,
 			);
