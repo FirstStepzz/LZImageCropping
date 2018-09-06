@@ -60,7 +60,7 @@ static const CGFloat kBaseTag = 200;
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     self.cropper.image = image;
     //设置自定义裁剪区域大小
-    self.cropper.cropSize = CGSizeMake(self.view.frame.size.width - 60, (self.view.frame.size.width-60));
+    self.cropper.cropSize = CGSizeMake(self.view.frame.size.width - 60, (self.view.frame.size.width-60)*960/1280);
     self.cropper.isRound = sender.tag-kBaseTag == 0;
     [self presentViewController:self.cropper animated:YES completion:nil];
 }

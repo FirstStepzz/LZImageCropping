@@ -55,16 +55,27 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    CGFloat scale;
+    CGFloat scale,autoScale;
     CGFloat cropWHRatio = _cropSize.width/_cropSize.height;
+    CGFloat viewWHRatio = CGRectGetWidth(self.view.frame)/CGRectGetHeight(self.view.frame);
+    
+    //计算最小缩放比例
     CGFloat  imageWHRatio = _image.size.width/_image.size.height;
     if (cropWHRatio > imageWHRatio) {
         scale = _cropSize.width/_imageView.frame.size.width;
     }else{
         scale = _cropSize.height/_imageView.frame.size.height;
     }
+    
+    //计算自动填充屏幕缩放比例
+    if (viewWHRatio > imageWHRatio) {
+        autoScale = CGRectGetWidth(self.view.frame)/_imageView.frame.size.width;
+    }else{
+        autoScale = CGRectGetHeight(self.view.frame)/_imageView.frame.size.height;
+    }
+    
     //自动缩放填满裁剪区域
-    [self.scrollView setZoomScale:scale animated:YES];
+    [self.scrollView setZoomScale:autoScale animated:YES];
     //设置刚好填充满裁剪区域的缩放比例，为最小缩放比例
     [self.scrollView setMinimumZoomScale:scale];
     self.scrollView.userInteractionEnabled = YES;
@@ -96,6 +107,15 @@
 }
 
 -(void)setupData{
+    //如果是圆形的话，对给的cropSize进行容错处理
+    if (self.isRound) {
+        if (self.cropSize.width >= self.cropSize.height) {
+            self.cropSize = CGSizeMake(self.cropSize.height, self.cropSize.height);
+        }else{
+            self.cropSize = CGSizeMake(self.cropSize.width, self.cropSize.width);
+        }
+    }
+    
     //设置裁剪框区域
     _cropFrame = CGRectMake((self.view.frame.size.width-self.cropSize.width)/2,(self.view.frame.size.height-self.cropSize.height)/2,self.cropSize.width,self.cropSize.height);
     
